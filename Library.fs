@@ -52,8 +52,6 @@ let train (trainingset:Observation[]) = //input is our training set and is in th
         |> Array.minBy (fun x -> manhattanDistance (x.Pixels,pixels))
         //now that we have the x/observation with the minumum distance, we seek to obtain it's label:
         |> fun x -> x.Label
-
-
     classify //train returns the function defined above
 
 //when we pass a set into train, we let that set = trainingset , pass the trianing set into classify, the return the classify function for further use
