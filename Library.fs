@@ -45,7 +45,6 @@ let manhattanDistance  (pixels1, pixels2) =
 //define a function that makes our predictions
 let train (trainingset:Observation[]) = //input is our training set and is in the form of an array of observations
     let classify (pixels:int[]) =  //input is our training set and is in the form of an array of observations
-        printfn "Hello there!"
         trainingset
         //now below we map each element in the training set (ie. each observation) to the "distance" between
         //that element's pixels to the pixels passed in as an input. Then, after completing the function
@@ -66,16 +65,6 @@ let classifier = train trainingData //let classifier contain the output of the t
 let validationPath = @"/Users/adityaiyengar/Documents/C#/DigitRecognition/Classification-DigitRecognition/train_2.csv"
 let validationData = reader validationPath //pass our validation path into reader, and reader will output an associated array of observations
 
-printfn "Hello there!"
 let finalValue = Array.averageBy (fun x -> if classifier (x.Pixels) = x.Label then 1. else 0.) validationData
-printfn "Hello there ! 2"
 printfn "Model accuracy: %f" finalValue
-//printfn "Model Accuracy: %A" finalValue
-(*
-//now, we have the validation set of observations. check whether the prediction made for each observation matches its actual label
-validationData //need to compare the predicted label to actual label. 
-|> Array.averageBy (fun x -> if classifier (x.Pixels) = x.Label then 1. else 0.) //x here is an element (an observation) from validationData
-//if x's predicted label = x's actual label, we have 100% match or 1. Else, no match (ie. 0% match) or 0.
-|> printfn "Model accuracy: %.3f" 
-*)
  
