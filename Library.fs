@@ -61,10 +61,10 @@ let train (trainingset:Observation[]) = //input is our training set and is in th
 let classifier = train trainingData //let classifier contain the output of the train function with input trainingData
 //classifer thus contains the classify function where trainingset = trainingData
 
-//validation data
-let validationPath = @"/Users/adityaiyengar/Documents/C#/DigitRecognition/Classification-DigitRecognition/train_2.csv"
-let validationData = reader validationPath //pass our validation path into reader, and reader will output an associated array of observations
+//testing data
+let testingPath = @"/Users/.../train_2.csv"
+let testingData = reader testingPath //pass our testing path into reader, and reader will output an associated array of observations
 
-let finalValue = Array.averageBy (fun x -> if classifier (x.Pixels) = x.Label then 1. else 0.) validationData
+let finalValue = Array.averageBy (fun x -> if classifier (x.Pixels) = x.Label then 1. else 0.) testingData
 printfn "Model accuracy: %f" finalValue
  
