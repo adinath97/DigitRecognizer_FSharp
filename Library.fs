@@ -32,7 +32,7 @@ let reader path =
     //line above maps the data to an associated observation
 
 
-let trainingPath = @"/Users/adityaiyengar/Documents/C#/DigitRecognition/Classification-DigitRecognition/train.csv"
+let trainingPath = @"/Users/.../train.csv"
 let trainingData = reader trainingPath //let trainingData be the set of observation obtained from trainingPath
 
 //define a distance function (instead of, say, defining a distance class and interface)
